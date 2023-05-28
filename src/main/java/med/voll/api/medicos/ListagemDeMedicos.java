@@ -1,9 +1,9 @@
 package med.voll.api.medicos;
 
-public record ListagemDeMedicos(String nome, String crm, med.voll.api.endereco.Endereco endereco, Especialidade especialidade) {
+public record ListagemDeMedicos(Long id, String nome, String telefone, med.voll.api.endereco.Endereco crm, String endereco, Especialidade especialidade) {
 
 
     public ListagemDeMedicos(Medico medico){
-        this(medico.getNome(), medico.getCrm(), medico.getEndereco(), Especialidade.ORTOPEDIA);
+        this(medico.getId(), medico.getNome(), medico.getCrm(), medico.getEndereco(), medico.getTelefone(), Especialidade.ORTOPEDIA);
     }
 }
